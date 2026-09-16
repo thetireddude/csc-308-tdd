@@ -10,6 +10,10 @@ function purchase(portfolio, symbol, shares) {
     portfolio[symbol] = (portfolio[symbol] || 0) + shares;
 }
 
+function sell(portfolio, symbol, shares) {
+    portfolio[symbol] -= shares;
+}
+
 module.exports = {
-    createPortfolio, isEmpty, purchase
+    createPortfolio, isEmpty, purchase, sell
 };
