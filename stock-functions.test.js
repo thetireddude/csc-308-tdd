@@ -1,4 +1,4 @@
-const { createPortfolio, isEmpty, purchase, sell} = require("./stock-functions");
+const { createPortfolio, isEmpty, purchase, sell, getTickerCount} = require("./stock-functions");
 
 test("a new portfolio starts empty", () => {
     const portfolio = createPortfolio();
@@ -27,4 +27,13 @@ test("selling shares subtracts them from the portfolio", () => {
     sell(portfolio, "GME", 2);
 
     expect(portfolio.GME).toBe(3);
+});
+
+test("portfolio reports number of unique ticker symbols/ stocks", () => {
+    const portfolio = createPortfolio();
+
+    purchase(portfolio, "GME", 5);
+    purchase(portfolio, "RBLX", 10);
+
+    expect(getTickerCount(portfolio)).toBe(2);
 });
