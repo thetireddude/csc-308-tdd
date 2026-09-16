@@ -70,3 +70,14 @@ test("selling more shares than owned throws an error", () => {
         sell(portfolio, "GME", 6);
     }).toThrow("Not possible to sell this number of shares.");
 });
+
+/*
+TDD Reflection:
+Throughout this assignment, I wrote a failing test case first for each new requirement
+before implementing the functionality. Initially the TDD method was slow for me as I was
+not used to thinking and doing things in this way. However, as I completed more and more 
+of the assignment I got accustomed to the approach. I realized that TDD made it easier to 
+define requirements, implement functionality, and debug code step-by-step. This process 
+also made it easier to track changes and implementation over time but TDD made the process
+for implementing small new features feel slower & more tedious.
+*/
