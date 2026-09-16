@@ -37,3 +37,12 @@ test("portfolio reports number of unique ticker symbols/ stocks", () => {
 
     expect(getTickerCount(portfolio)).toBe(2);
 });
+
+test("selling all shares removes the ticker from the portfolio", () => {
+    const portfolio = createPortfolio();
+
+    purchase(portfolio, "GME", 5);
+    sell(portfolio, "GME", 5);
+
+    expect(portfolio).toEqual({});
+});
