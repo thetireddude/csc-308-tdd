@@ -22,6 +22,15 @@ function getTickerCount(portfolio) {
     return Object.keys(portfolio).length;
 }
 
+function getShares(portfolio, symbol) {
+    if (!portfolio[symbol]) {
+        return 0
+    }
+    else {
+        return portfolio[symbol]
+    }
+}
+
 module.exports = {
-    createPortfolio, isEmpty, purchase, sell, getTickerCount
+    createPortfolio, isEmpty, purchase, sell, getTickerCount, getShares
 };
