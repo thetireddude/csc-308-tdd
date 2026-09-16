@@ -23,12 +23,7 @@ function getTickerCount(portfolio) {
 }
 
 function getShares(portfolio, symbol) {
-    if (!portfolio[symbol]) {
-        return 0
-    }
-    else {
-        return portfolio[symbol]
-    }
+    return portfolio[symbol] || 0
 }
 
 module.exports = {
