@@ -14,6 +14,10 @@ function sell(portfolio, symbol, shares) {
     portfolio[symbol] -= shares;
 }
 
+function getTickerCount(portfolio) {
+    return Object.keys(portfolio).length;
+}
+
 module.exports = {
-    createPortfolio, isEmpty, purchase, sell
+    createPortfolio, isEmpty, purchase, sell, getTickerCount
 };
