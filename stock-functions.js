@@ -12,7 +12,9 @@ function purchase(portfolio, symbol, shares) {
 
 function sell(portfolio, symbol, shares) {
 
-    if (shares > (portfolio[symbol] || 0)) {
+    owned = portfolio[symbol] || 0
+
+    if (shares > owned) {
         throw new Error("Not possible to sell this number of shares.");
     }
 
