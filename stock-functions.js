@@ -12,6 +12,10 @@ function purchase(portfolio, symbol, shares) {
 
 function sell(portfolio, symbol, shares) {
     portfolio[symbol] -= shares;
+
+    if (portfolio[symbol] === 0) {
+        delete portfolio[symbol];
+    }
 }
 
 function getTickerCount(portfolio) {
