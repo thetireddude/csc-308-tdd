@@ -60,3 +60,13 @@ test("portfolio returns 0 shares for a ticker that doesn't exist", () => {
 
     expect(getShares(portfolio, "RBLX")).toBe(0);
 });
+
+test("selling more shares than owned throws an error", () => {
+    const portfolio = createPortfolio();
+
+    purchase(portfolio, "GME", 5);
+
+    expect(() => {
+        sell(portfolio, "GME", 6);
+    }).toThrow("Not possible to sell this number of shares.");
+});
