@@ -7,12 +7,7 @@ function isEmpty(portfolio) {
 }
 
 function purchase(portfolio, symbol, shares) {
-    if (!portfolio[symbol] | portfolio[symbol] === 0) {
-        portfolio[symbol] = shares
-    }
-    else {
-        portfolio[symbol] = portfolio[symbol] + shares
-    }
+    portfolio[symbol] = (portfolio[symbol] || 0) + shares;
 }
 
 module.exports = {
